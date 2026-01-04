@@ -3,6 +3,15 @@
 The `public` folder includes the outputs of `index.js`.
 `upload.js` uploads these files to a Cloudflare R2 bucket.
 
+## Build Styles
+
+Make sure to fetch this repository's submodule before continuing.
+Requires `docker compose` due to the OpenMapTiles build process.
+
+```
+bun run index.js
+```
+
 ## GitHub Actions Setup
 
 A workflow automatically uploads styles from `public` when you push to the `trunk` branch.
