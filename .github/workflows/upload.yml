@@ -19,8 +19,8 @@ jobs:
       - name: Install dependencies
         run: bun install
 
-      - name: Build styles
-        run: bun run index.js
+      # - name: Build styles
+      #   run: bun run index.js
 
       - name: Upload to R2
         run: bun run upload.js
