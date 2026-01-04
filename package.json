@@ -1,0 +1,20 @@
+{
+  "name": "styles",
+  "module": "index.js",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "node index.js",
+    "upload": "node upload.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.962.0",
+    "mime-types": "^2.1.35"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

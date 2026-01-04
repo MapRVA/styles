@@ -1,0 +1,31 @@
+name: Build and Upload Styles
+
+on:
+  push:
+    branches:
+      - trunk
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    environment: r2-uploader
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Build styles
+        run: bun run index.js
+
+      - name: Upload to R2
+        run: bun run upload.js
+        env:
+          R2_ACCOUNT_ID: ${{ vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ vars.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
