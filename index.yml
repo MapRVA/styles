@@ -7,11 +7,13 @@ resources:
       <p>Many of the map styles from <a target="_blank" href="https://openmaptiles.org/styles/">openmaptiles.org/styles/</a></p>
       <p>Tiles & Fonts hosted by <a target="_blank" href="https://tiles.openstreetmap.us/">OpenStreetMap US</a></p>
     labels:
-      - 🖊️ Vector
+      #- 🖊️ Vector
       - Source -
         <a target="_blank" href="https://openstreetmap.org/">OpenStreetMap</a>
         &amp;
         <a target="_blank" href="https://openmaptiles.org">OpenMapTiles</a>
+      - Tiles -
+        <a target="_blank" href="https://tiles.openstreetmap.us/">OSM US</a>
       - License -
         <a target="_blank" href="https://openstreetmap.org/copyright">ODbL</a>
         &amp;
