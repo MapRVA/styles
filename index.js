@@ -27,28 +27,43 @@ const download = async (url, path) =>
 
 function fixTextFont(layers, styleName) {
   for (const i in layers) {
-    if (styleName === "maptiler-toner") {
-      if (layers[i].layout && layers[i].layout["text-font"]) {
-        const str = JSON.stringify(layers[i].layout["text-font"]);
+    if (layers[i].layout && layers[i].layout["text-font"]) {
+      const font = layers[i].layout["text-font"];
+      if (font[0] == "step") {
+        const str = JSON.stringify(font);
         const newStr = str
-          .replace(/Nunito/g, "Open Sans")
-          .replace(/Noto/g, "Open")
-          .replace(/Semi Bold/g, "Semibold");
+          .replace(/Klokantech /g, "")
+          .replace(/Nunito/g, "Noto Sans")
+          .replace(/Semi Bold/g, "SemiBold")
+          .replace(/Extra Bold/g, "ExtraBold");
         layers[i].layout["text-font"] = JSON.parse(newStr);
+      } else {
+        const supportedFonts = font.filter(f => f.startsWith("Noto") || f.startsWith("Roboto"));
+        if (supportedFonts.length > 0) {
+          layers[i].layout["text-font"] = supportedFonts.slice(0, 1);
+        } else {
+          layers[i].layout["text-font"] = [
+            font[0]
+              .replace(/Klokantech /g, "")
+              .replace(/Nunito/g, "Noto Sans")
+              .replace(/Semi Bold/g, "SemiBold")
+              .replace(/Extra Bold/g, "ExtraBold")
+          ];
+        }
       }
-    } else if (
-      layers[i].layout &&
-      layers[i].layout["text-font"] &&
-      layers[i].layout["text-font"].length > 1
-    ) {
-      layers[i].layout["text-font"] = layers[i].layout["text-font"].slice(1);
     }
   }
 }
 
+function setDefaultView(style) {
+  style.center = [-77.4429, 37.5312];
+  style.zoom = 11;
+}
+
 async function buildRemoteStyles() {
   for (const [styleName, url] of Object.entries(styles)) {
-    const style = await (await fetch(url)).json();
+    let style = await (await fetch(url)).json();
+    style = migrate(style);
     style.sources.openmaptiles.url =
       "https://tiles.openstreetmap.us/vector/openmaptiles.json";
     style.sources.openmaptiles.attribution =
@@ -72,6 +87,7 @@ async function buildRemoteStyles() {
     }
     style.sprite = `https://styles.maprva.org/sprites/${styleName}`;
     fixTextFont(style.layers, styleName);
+    setDefaultView(style);
     fs.writeFileSync(`public/${styleName}.json`, JSON.stringify(style));
   }
 }
@@ -85,6 +101,7 @@ function buildOpenMapTilesStyle() {
     fs.readFileSync("openmaptiles/build/style/style.json"),
   );
   style = migrate(style);
+  setDefaultView(style);
   style.sources.openmaptiles.url =
     "https://tiles.openstreetmap.us/vector/openmaptiles.json";
   style.sources.openmaptiles.attribution =
