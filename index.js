@@ -49,9 +49,10 @@ function fixTextFont(layers, styleName) {
 async function buildRemoteStyles() {
   for (const [styleName, url] of Object.entries(styles)) {
     const style = await (await fetch(url)).json();
-    style.sources.openmaptiles.url = "https://tiles.openfreemap.org/planet";
+    style.sources.openmaptiles.url =
+      "https://tiles.openstreetmap.us/vector/openmaptiles.json";
     style.sources.openmaptiles.attribution =
-      '<a href="https://openfreemap.org//" target="_blank">OpenFreeMap</a><a href="https://www.openmaptiles.org/" target="_blank">&copy; OpenMapTiles</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>';
+      'Tiles by <a href="https://tiles.openstreetmap.us">OSM US</a> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> © <a href="https://openmaptiles.org">OpenMapTiles</a>';
     style.glyphs =
       "https://tiles.openstreetmap.us/fonts/{fontstack}/{range}.pbf";
     if (style.sprite) {
@@ -84,7 +85,10 @@ function buildOpenMapTilesStyle() {
     fs.readFileSync("openmaptiles/build/style/style.json"),
   );
   style = migrate(style);
-  style.sources.openmaptiles.url = "https://tiles.openfreemap.org/planet";
+  style.sources.openmaptiles.url =
+    "https://tiles.openstreetmap.us/vector/openmaptiles.json";
+  style.sources.openmaptiles.attribution =
+    'Tiles by <a href="https://tiles.openstreetmap.us">OSM US</a> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> © <a href="https://openmaptiles.org">OpenMapTiles</a>';
   style.glyphs = "https://tiles.openstreetmap.us/fonts/{fontstack}/{range}.pbf";
   style.sprite = "https://styles.maprva.org/sprites/openmaptiles-osm";
   fixTextFont(style.layers, "openmaptiles-osm");
