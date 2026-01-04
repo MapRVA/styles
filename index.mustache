@@ -1,0 +1,160 @@
+<!doctype html>
+{{! A simple template for a data catalog. Icons from heroicons.com }}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <title>{{name}}</title>
+    <link rel="shortcut icon" href="{{icon}}" type="image/x-icon" />
+    <style>
+      html {
+        box-sizing: border-box;
+        font-size: 16px;
+        font-family: sans-serif;
+      }
+      body {
+        margin: 1.5em;
+      }
+      *, *:before, *:after {
+        box-sizing: inherit;
+      }
+      a, a:visited, a:hover {
+        color: inherit;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 2em auto;
+      }
+      h1 a {
+      }
+      h1 img, h1 svg {
+        height: 2em;
+        vertical-align: middle;
+      }
+      article {
+        border-top: 1px solid rgb(127,127,127);
+      }
+      article h2 a {
+        display: inline-block;
+        height: 1em;
+        width: 1em;
+        margin-left: -1em;
+        opacity: 0;
+      }
+      article h2:hover a {
+        opacity: 1;
+      }
+      section {
+        margin: 1em 0;
+      }
+      pre {
+        background: rgba(127,127,127,0.3);
+        border-radius: .3em;
+        padding: 1em;
+        margin: 1em;
+      }
+      mark {
+        background: rgba(127,127,127,0.3);
+        border-radius: .3em;
+        padding: .25em .5em;
+        display: inline-block;
+        color: inherit;
+        margin: 0.1em;
+      }
+      .table {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        overflow-x: auto;
+      }
+      .table > :first-child {
+        grid-area: 1 / 1 / 2 / 3;
+        background: rgba(127,127,127,0.3);
+        font-weight: bold;
+        border: none;
+      }
+      .table div {
+        border-top: 1px solid rgb(127,127,127);
+        padding: 0.5em 1em;
+      }
+      .table div svg {
+        vertical-align: middle;
+        height: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <h1>
+        <a href=".">
+          {{#icon}}<img alt="icon" src="{{.}}">{{/icon}}
+          {{^icon}}<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+          </svg>{{/icon}}
+          {{#name}}{{name}}{{/name}}
+          {{^name}}Data Catalog{{/name}}
+        </a>
+      </h1>
+      <section>{{{description}}}</section>
+      {{#resources}}
+      <article>
+        <h2 id="{{name}}">
+          <a href="#{{name}}">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+              <path d="M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z" />
+              <path d="M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z" />
+            </svg>
+          </a>{{name}}</h2>
+        <section>
+          {{#labels}}
+          <mark>{{{.}}}</mark>
+          {{/labels}}
+        </section>
+        <section>{{{description}}}</section>
+        {{#details}}
+        <details>
+          <summary>{{summary}}</summary>
+          {{{content}}}
+        </details>
+        {{/details}}
+        {{#tables}}
+        <section>
+          <div class="table">
+              <div class="thead">{{title}}</div>
+              {{#rows}}
+                <div>
+                  {{name}}
+                  {{#preview}}
+                  <a target="_blank" href="{{preview}}" title="preview">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+                      <path d="M6 7.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" />
+                      <path fill-rule="evenodd" d="M4 2a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 4 14h8a1.5 1.5 0 0 0 1.5-1.5V6.621a1.5 1.5 0 0 0-.44-1.06L9.94 2.439A1.5 1.5 0 0 0 8.878 2H4Zm3.5 2.5a3 3 0 1 0 1.524 5.585l1.196 1.195a.75.75 0 1 0 1.06-1.06l-1.195-1.196A3 3 0 0 0 7.5 4.5Z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                  {{/preview}}
+                </div>
+                <div>
+                    {{#filename}}
+                    <a download="{{filename}}" href="{{link}}">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+                        <path fill-rule="evenodd" d="M4 2a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 4 14h8a1.5 1.5 0 0 0 1.5-1.5V6.621a1.5 1.5 0 0 0-.44-1.06L9.94 2.439A1.5 1.5 0 0 0 8.878 2H4Zm4 3.5a.75.75 0 0 1 .75.75v2.69l.72-.72a.75.75 0 1 1 1.06 1.06l-2 2a.75.75 0 0 1-1.06 0l-2-2a.75.75 0 0 1 1.06-1.06l.72.72V6.25A.75.75 0 0 1 8 5.5Z" clip-rule="evenodd" />
+                      </svg>
+                      <code>{{filename}}</code>
+                    </a>
+                    {{/filename}}
+                    {{^filename}}
+                    <code>{{link}}</code>
+                    {{/filename}}
+                </div>
+              {{/rows}}
+          </div>
+        </section>
+        {{/tables}}
+      </article>
+      {{/resources}}
+    </main>
+</html>

@@ -22,6 +22,16 @@ jobs:
       - name: Install dependencies
         run: bun install
 
+
+      - name: Setup go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "^1.13.1" # The Go version to download (if necessary) and use.
+      - name: Install go mustache CLI
+        run: go install github.com/cbroglie/mustache/cmd/mustache@latest
+      - name: build index
+        run: mustache index.yml index.mustache > public/index.html
+
       # - name: Build styles
       #   run: bun run index.js
 

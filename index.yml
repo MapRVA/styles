@@ -1,0 +1,48 @@
+name: MapRVA Style Server
+icon: https://maprva.org/img/logo.svg
+description: Styles for use in MapRVA projects, including <a target="_blank" href="https://yesterdays.maprva.org">Yesterdays</a>.
+resources:
+  - name: OpenMapTiles Styles
+    description: |
+      <p>Many of the map styles from <a target="_blank" href="https://openmaptiles.org/styles/">openmaptiles.org/styles/</a></p>
+      <p>Tiles & Fonts hosted by <a target="_blank" href="https://tiles.openstreetmap.us/">OpenStreetMap US</a></p>
+    labels:
+      - 🖊️ Vector
+      - Source -
+        <a target="_blank" href="https://openstreetmap.org/">OpenStreetMap</a>
+        &amp;
+        <a target="_blank" href="https://openmaptiles.org">OpenMapTiles</a>
+      - License -
+        <a target="_blank" href="https://openstreetmap.org/copyright">ODbL</a>
+        &amp;
+        <a target="_blank" href="https://github.com/openmaptiles/openmaptiles/blob/master/LICENSE.md#design-license-cc-by-40">CC-BY 4.0</a>
+    tables:
+      - title: MapLibre Styles
+        rows:
+          - name: OSM OpenMapTiles
+            link: https://styles.maprva.org/openmaptiles-osm.json
+            preview: https://overpass-ultra.us/#map&style=https://styles.maprva.org/openmaptiles-osm.json
+          - name: Maptiler Basic
+            link: https://styles.maprva.org/maptiler-basic.json
+            preview: https://overpass-ultra.us/#map&style=https://styles.maprva.org/maptiler-basic.json
+          - name: OSM Bright
+            link: https://styles.maprva.org/osm-bright.json
+            preview: https://overpass-ultra.us/#map&style=https://styles.maprva.org/osm-bright.json
+          - name: Positron
+            link: https://styles.maprva.org/positron.json
+            preview: https://overpass-ultra.us/#map&style=https://styles.maprva.org/positron.json
+          - name: Dark Matter
+            link: https://styles.maprva.org/dark-matter.json
+            preview: https://overpass-ultra.us/#map&style=https://styles.maprva.org/dark-matter.json
+          - name: MapTiler 3D
+            link: https://styles.maprva.org/maptiler-3d.json
+            preview: https://overpass-ultra.us/#map&style=https://styles.maprva.org/fiord-color.json
+          - name: Fiord Color
+            link: https://styles.maprva.org/fiord-color.json
+            preview: https://overpass-ultra.us/#map&style=https://styles.maprva.org/fiord-color.json
+          - name: Toner
+            link: https://styles.maprva.org/maptiler-toner.json
+            preview: https://overpass-ultra.us/#map&style=https://styles.maprva.org/maptiler-toner.json
+          - name: OSM Liberty
+            link: https://styles.maprva.org/osm-liberty.json
+            preview: https://overpass-ultra.us/#map&style=https://styles.maprva.org/osm-liberty.json
