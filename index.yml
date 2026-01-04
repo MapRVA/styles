@@ -1,6 +1,6 @@
 name: MapRVA Style Server
 icon: https://maprva.org/img/logo.svg
-description: Styles for use in MapRVA projects, including <a target="_blank" href="https://yesterdays.maprva.org">Yesterdays</a>.
+description: MapLibre styles for use in MapRVA projects, including <a target="_blank" href="https://yesterdays.maprva.org">Yesterdays</a>.
 resources:
   - name: OpenMapTiles Styles
     description: |
