@@ -1,4 +1,8 @@
-import { S3Client, PutObjectCommand, ListObjectsV2Command } from "@aws-sdk/client-s3";
+import {
+  S3Client,
+  PutObjectCommand,
+  ListObjectsV2Command,
+} from "@aws-sdk/client-s3";
 import { readdir, readFile, stat } from "fs/promises";
 import { join, relative } from "path";
 import { lookup } from "mime-types";
@@ -8,9 +12,16 @@ const R2_ACCESS_KEY_ID = process.env.R2_ACCESS_KEY_ID;
 const R2_SECRET_ACCESS_KEY = process.env.R2_SECRET_ACCESS_KEY;
 const R2_BUCKET_NAME = process.env.R2_BUCKET_NAME;
 
-if (!R2_ACCOUNT_ID || !R2_ACCESS_KEY_ID || !R2_SECRET_ACCESS_KEY || !R2_BUCKET_NAME) {
+if (
+  !R2_ACCOUNT_ID ||
+  !R2_ACCESS_KEY_ID ||
+  !R2_SECRET_ACCESS_KEY ||
+  !R2_BUCKET_NAME
+) {
   console.error("Missing required environment variables:");
-  console.error("  R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, R2_BUCKET_NAME");
+  console.error(
+    "  R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, R2_BUCKET_NAME",
+  );
   process.exit(1);
 }
 
@@ -63,7 +74,9 @@ async function upload() {
   try {
     await stat(publicDir);
   } catch {
-    console.error("public/ directory does not exist. Run the build script first.");
+    console.error(
+      "public/ directory does not exist. Run the build script first.",
+    );
     process.exit(1);
   }
 
@@ -74,7 +87,9 @@ async function upload() {
     return;
   }
 
-  console.log(`Uploading ${files.length} files to R2 bucket: ${R2_BUCKET_NAME}`);
+  console.log(
+    `Uploading ${files.length} files to R2 bucket: ${R2_BUCKET_NAME}`,
+  );
 
   for (const file of files) {
     await uploadFile(file.path, file.key);

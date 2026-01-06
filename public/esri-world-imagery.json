@@ -1,0 +1,1 @@
+{"version":8,"layers":[{"type":"raster","id":"raster","source":"raster"}],"sources":{"raster":{"type":"raster","tiles":["https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"],"tileSize":256,"attribution":"<a href=\"https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9\">Esri World Imagery</a>"}}}

@@ -1,0 +1,1 @@
+{"version":8,"layers":[{"type":"raster","id":"raster","source":"raster"}],"sources":{"raster":{"type":"raster","tiles":["https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VBMP_Imagery/VBMP2016_WGS/MapServer/tile/{z}/{y}/{x}"],"tileSize":256}}}

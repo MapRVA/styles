@@ -3,6 +3,10 @@ import { Readable } from "stream";
 import { spawnSync } from "child_process";
 import { migrate } from "@maplibre/maplibre-gl-style-spec";
 
+import buildVBMPStyles from "./vbmp.js";
+import buildHenricoStyles from "./henrico.js";
+import buildEsriStyle from "./esri.js";
+
 fs.mkdirSync("public/sprites", { recursive: true });
 
 const styles = {
@@ -38,7 +42,9 @@ function fixTextFont(layers, styleName) {
           .replace(/Extra Bold/g, "ExtraBold");
         layers[i].layout["text-font"] = JSON.parse(newStr);
       } else {
-        const supportedFonts = font.filter(f => f.startsWith("Noto") || f.startsWith("Roboto"));
+        const supportedFonts = font.filter(
+          (f) => f.startsWith("Noto") || f.startsWith("Roboto"),
+        );
         if (supportedFonts.length > 0) {
           layers[i].layout["text-font"] = supportedFonts.slice(0, 1);
         } else {
@@ -47,7 +53,7 @@ function fixTextFont(layers, styleName) {
               .replace(/Klokantech /g, "")
               .replace(/Nunito/g, "Noto Sans")
               .replace(/Semi Bold/g, "SemiBold")
-              .replace(/Extra Bold/g, "ExtraBold")
+              .replace(/Extra Bold/g, "ExtraBold"),
           ];
         }
       }
@@ -139,6 +145,9 @@ async function build() {
     process.exit(1);
   }
   buildOpenMapTilesStyle();
+  await buildVBMPStyles();
+  await buildHenricoStyles();
+  buildEsriStyle();
 }
 
 build();

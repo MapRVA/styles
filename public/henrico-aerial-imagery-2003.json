@@ -1,0 +1,1 @@
+{"version":8,"layers":[{"type":"raster","id":"raster","source":"raster"}],"sources":{"raster":{"type":"raster","tiles":["https://portal.henrico.gov/mapping/rest/services/Imagery/AerialPhotosAll/MapServer/export?bbox={bbox-epsg-3857}&bboxSR=3857&imageSR=3857&size=512,512&dpi=96&format=png&transparent=true&f=image&layers=show:72"],"tileSize":512}}}
