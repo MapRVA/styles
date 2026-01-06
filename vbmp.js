@@ -23,6 +23,8 @@ export default async () => {
       ],
       256,
     );
+    style.center = [-79.609, 38.026];
+    style.zoom = 6;
     fs.writeFileSync(
       `public/vgin-vbmp-imagery-${year}.json`,
       JSON.stringify(style),
