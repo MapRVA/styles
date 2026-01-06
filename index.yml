@@ -59,42 +59,61 @@ resources:
         rows:
           - name: VBMP latest
             link: https://styles.maprva.org/vgin-vbmp-latest.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/vgin-vbmp-latest.json
           - name: VBMP 2025
             link: https://styles.maprva.org/vgin-vbmp-2025.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/vgin-vbmp-2025.json
           - name: VBMP 2024
             link: https://styles.maprva.org/vgin-vbmp-2024.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/vgin-vbmp-2024.json
           - name: VBMP 2023
             link: https://styles.maprva.org/vgin-vbmp-2023.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/vgin-vbmp-2023.json
           - name: VBMP 2022
             link: https://styles.maprva.org/vgin-vbmp-2022.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/vgin-vbmp-2022.json
           - name: VBMP 2021
             link: https://styles.maprva.org/vgin-vbmp-2021.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/vgin-vbmp-2021.json
           - name: VBMP 2019
             link: https://styles.maprva.org/vgin-vbmp-2019.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/vgin-vbmp-2019.json
           - name: VBMP 2018
             link: https://styles.maprva.org/vgin-vbmp-2018.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/vgin-vbmp-2018.json
           - name: VBMP 2017
             link: https://styles.maprva.org/vgin-vbmp-2017.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/vgin-vbmp-2017.json
           - name: VBMP 2016
             link: https://styles.maprva.org/vgin-vbmp-2016.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/vgin-vbmp-2016.json
           - name: VBMP 2015
             link: https://styles.maprva.org/vgin-vbmp-2015.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/vgin-vbmp-2015.json
           - name: VBMP 2014
             link: https://styles.maprva.org/vgin-vbmp-2014.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/vgin-vbmp-2014.json
           - name: VBMP 2013
             link: https://styles.maprva.org/vgin-vbmp-2013.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/vgin-vbmp-2013.json
           - name: VBMP 2012
             link: https://styles.maprva.org/vgin-vbmp-2012.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/vgin-vbmp-2012.json
           - name: VBMP 2011
             link: https://styles.maprva.org/vgin-vbmp-2011.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/vgin-vbmp-2011.json
           - name: VBMP 2009
             link: https://styles.maprva.org/vgin-vbmp-2009.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/vgin-vbmp-2009.json
           - name: VBMP 2007
             link: https://styles.maprva.org/vgin-vbmp-2007.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/vgin-vbmp-2007.json
           - name: VBMP 2006
             link: https://styles.maprva.org/vgin-vbmp-2006.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/vgin-vbmp-2006.json
           - name: VBMP 2002
             link: https://styles.maprva.org/vgin-vbmp-2002.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/vgin-vbmp-2002.json
   - name: Henrico County
     description: |
       <p>Raster basemaps from Henrico County's Aerial Imagery</p>
@@ -107,42 +126,61 @@ resources:
         rows:
           - name: Henrico Aerial Imagery latest
             link: https://styles.maprva.org/henrico-aerial-imagery-latest.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/henrico-aerial-imagery-latest.json
           - name: Henrico Aerial Imagery 2025
             link: https://styles.maprva.org/henrico-aerial-imagery-2025.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/henrico-aerial-imagery-2025.json
           - name: Henrico Aerial Imagery 2024
             link: https://styles.maprva.org/henrico-aerial-imagery-2024.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/henrico-aerial-imagery-2024.json
           - name: Henrico Aerial Imagery 2022
             link: https://styles.maprva.org/henrico-aerial-imagery-2022.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/henrico-aerial-imagery-2022.json
           - name: Henrico Aerial Imagery 2021
             link: https://styles.maprva.org/henrico-aerial-imagery-2021.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/henrico-aerial-imagery-2021.json
           - name: Henrico Aerial Imagery 2020
             link: https://styles.maprva.org/henrico-aerial-imagery-2020.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/henrico-aerial-imagery-2020.json
           - name: Henrico Aerial Imagery 2018
             link: https://styles.maprva.org/henrico-aerial-imagery-2018.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/henrico-aerial-imagery-2018.json
           - name: Henrico Aerial Imagery 2017
             link: https://styles.maprva.org/henrico-aerial-imagery-2017.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/henrico-aerial-imagery-2017.json
           - name: Henrico Aerial Imagery 2016
             link: https://styles.maprva.org/henrico-aerial-imagery-2016.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/henrico-aerial-imagery-2016.json
           - name: Henrico Aerial Imagery 2015
             link: https://styles.maprva.org/henrico-aerial-imagery-2015.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/henrico-aerial-imagery-2015.json
           - name: Henrico Aerial Imagery 2013
             link: https://styles.maprva.org/henrico-aerial-imagery-2013.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/henrico-aerial-imagery-2013.json
           - name: Henrico Aerial Imagery 2012
             link: https://styles.maprva.org/henrico-aerial-imagery-2012.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/henrico-aerial-imagery-2012.json
           - name: Henrico Aerial Imagery 2011
             link: https://styles.maprva.org/henrico-aerial-imagery-2011.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/henrico-aerial-imagery-2011.json
           - name: Henrico Aerial Imagery 2009
             link: https://styles.maprva.org/henrico-aerial-imagery-2009.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/henrico-aerial-imagery-2009.json
           - name: Henrico Aerial Imagery 2008
             link: https://styles.maprva.org/henrico-aerial-imagery-2008.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/henrico-aerial-imagery-2008.json
           - name: Henrico Aerial Imagery 2007
             link: https://styles.maprva.org/henrico-aerial-imagery-2007.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/henrico-aerial-imagery-2007.json
           - name: Henrico Aerial Imagery 2003
             link: https://styles.maprva.org/henrico-aerial-imagery-2003.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/henrico-aerial-imagery-2003.json
           - name: Henrico Aerial Imagery 2002
             link: https://styles.maprva.org/henrico-aerial-imagery-2002.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/henrico-aerial-imagery-2002.json
           - name: Henrico Aerial Imagery 1998
             link: https://styles.maprva.org/henrico-aerial-imagery-1998.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/henrico-aerial-imagery-1998.json
   - name: Esri World Imagery
     description: |
       <p>Raster basemaps from Esri World Imagery</p>
@@ -155,3 +193,4 @@ resources:
         rows:
           - name: Esri World Imagery
             link: https://styles.maprva.org/esri-world-imagery.json
+            preview: https://overpass-ultra.us/?style=https://styles.maprva.org/esri-world-imagery.json
