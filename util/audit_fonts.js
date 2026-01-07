@@ -6,7 +6,7 @@ const fonts = new Set();
 for (const f of fs.readdirSync(dir)) {
   if (!f.endsWith(".json")) continue;
   for (const l of JSON.parse(fs.readFileSync(`${dir}/${f}`)).layers) {
-    if (l.layout && l.layout["text-font"]) fonts.add(JSON.stringify(l.layout["text-font"]));
+    if (l.layout && l.layout["text-font"]) fonts.add(f + " " + JSON.stringify(l.layout["text-font"]));
   }
 }
 

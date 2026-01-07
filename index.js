@@ -33,30 +33,17 @@ function fixTextFont(layers, styleName) {
   for (const i in layers) {
     if (layers[i].layout && layers[i].layout["text-font"]) {
       const font = layers[i].layout["text-font"];
-      if (font[0] == "step") {
-        const str = JSON.stringify(font);
-        const newStr = str
-          .replace(/Klokantech /g, "")
-          .replace(/Nunito/g, "Noto Sans")
-          .replace(/Semi Bold/g, "SemiBold")
-          .replace(/Extra Bold/g, "ExtraBold");
-        layers[i].layout["text-font"] = JSON.parse(newStr);
-      } else {
-        const supportedFonts = font.filter(
-          (f) => f.startsWith("Noto") || f.startsWith("Roboto"),
-        );
-        if (supportedFonts.length > 0) {
-          layers[i].layout["text-font"] = supportedFonts.slice(0, 1);
-        } else {
-          layers[i].layout["text-font"] = [
-            font[0]
-              .replace(/Klokantech /g, "")
-              .replace(/Nunito/g, "Noto Sans")
-              .replace(/Semi Bold/g, "SemiBold")
-              .replace(/Extra Bold/g, "ExtraBold"),
-          ];
-        }
-      }
+      const str = JSON.stringify(font);
+      const newStr = str
+        // Strip Klokantech prefix (for 'Klokantech Noto Sans *' fonts)
+        .replace(/Klokantech /g, "")
+        // Change Nunito to Nunito Sans
+        .replace(/Nunito/g, "Nunito Sans")
+        // Fix casing of Open Sans Semibold
+        .replace(/Open Sans Semibold/g, "Open Sans SemiBold")
+        // Remove space from Semi/Extra Bold for Noto Sans & Nunito Sans
+        .replace(/(Noto|Nunito) Sans (Semi|Extra) Bold/g, "$1 Sans $2Bold")
+      layers[i].layout["text-font"] = JSON.parse(newStr);
     }
   }
 }
