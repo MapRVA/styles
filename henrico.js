@@ -12,17 +12,11 @@ export default async () => {
   );
   let { layers } = await resp.json();
 
-  layers = layers.filter(
-    ({ name, parentLayerId }) =>
-      parentLayerId === -1 && 1900 < parseInt(name) && parseInt(name) < 3000,
-  );
-
   let max = 0;
   let maxID;
-  for (const { id, name } of layers) {
-    const year = parseInt(name);
-    if (year > max) {
-      max = year;
+  for (const { id } of layers) {
+    if (id > max) {
+      max = id;
       maxID = id;
     }
     const style = raster([
@@ -30,7 +24,7 @@ export default async () => {
     ]);
     center(style);
     fs.writeFileSync(
-      `public/henrico-aerial-imagery-${year}.json`,
+      `public/henrico-aerial-imagery-${id}.json`,
       JSON.stringify(style),
     );
   }
